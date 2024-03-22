@@ -1,0 +1,54 @@
+{
+  "title": "main",
+  "description": "",
+  "variables": {
+    "documentDisplay": {
+      "type": "string"
+    },
+    "URIPath": {
+      "type": "string",
+      "onValueChanged": {
+        "chains": [
+          {
+            "parameters": {
+              "event": "{{ $event }}",
+              "value": "{{ $event.value }}"
+            },
+            "chain": "InputTextValueChangeChain"
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      }
+    }
+  },
+  "security": {
+    "access": {
+      "requiresAuthentication": false
+    }
+  }
+}
